@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Nhóm - Portfolio</title>
+  <title>CV Nhóm 6 - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -12,71 +13,48 @@
     }
 
     body {
-      font-family: 'Cormorant Garamond', 'Georgia', serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
-      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1a1a1a;
+      color: #fff;
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(218, 165, 32, 0.1) 0%, transparent 50%);
-      pointer-events: none;
+      padding: 40px 20px;
     }
 
     .container {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 60px 40px;
-      position: relative;
-      z-index: 1;
     }
 
     header {
       text-align: center;
-      margin-bottom: 80px;
-      position: relative;
+      margin-bottom: 60px;
     }
 
     h1 {
-      font-size: 4.5rem;
-      font-weight: 300;
-      letter-spacing: 12px;
-      background: linear-gradient(135deg, #d4af37 0%, #f8f6e3 50%, #d4af37 100%);
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      background: linear-gradient(135deg, #d4af37 0%, #f4e5c3 50%, #d4af37 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       text-transform: uppercase;
-      animation: shimmer 3s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
     }
 
     .subtitle {
       font-size: 1.2rem;
-      color: #c9c9c9;
-      letter-spacing: 4px;
-      font-weight: 300;
+      color: #999;
+      letter-spacing: 2px;
+      font-weight: 400;
     }
 
     .divider {
-      width: 120px;
+      width: 80px;
       height: 2px;
       background: linear-gradient(90deg, transparent, #d4af37, transparent);
-      margin: 30px auto;
+      margin: 20px auto;
     }
 
     .members-grid {
@@ -87,68 +65,94 @@
     }
 
     .member-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(212, 175, 55, 0.2);
+      background: #2a2a2a;
       border-radius: 20px;
       padding: 50px 40px;
-      backdrop-filter: blur(10px);
+      border: 1px solid #3a3a3a;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
-      overflow: hidden;
-    }
-
-    .member-card::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(135deg, #d4af37, #f8f6e3, #d4af37);
-      border-radius: 20px;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      z-index: -1;
-    }
-
-    .member-card:hover::before {
-      opacity: 0.2;
     }
 
     .member-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
-      border-color: rgba(212, 175, 55, 0.5);
+      box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+      border-color: #d4af37;
     }
 
-   .member-name {
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: #d4af37;
-      margin-bottom: 35px;
-      letter-spacing: 1px;
+    .member-header {
       text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
       position: relative;
-      padding-bottom: 20px;
-      white-space: nowrap;
     }
 
-    .member-name::after {
+    .member-header::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       width: 60px;
-      height: 1px;
+      height: 2px;
       background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    }
+
+    .avatar-wrapper {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 25px;
+      position: relative;
+    }
+
+    .avatar-ring {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 3px solid #d4af37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a1a;
+      transition: transform 0.4s ease;
+      overflow: hidden;
+    }
+
+    .member-card:hover .avatar-ring {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .avatar-icon {
+      font-size: 3.5rem;
+      color: #d4af37;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .member-name {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #d4af37;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .member-id {
+      font-size: 0.95rem;
+      color: #888;
+      letter-spacing: 2px;
+      font-family: 'Courier New', monospace;
     }
 
     .links-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 15px;
     }
 
     .link-item a {
@@ -156,14 +160,15 @@
       align-items: center;
       justify-content: space-between;
       text-decoration: none;
-      color: #e0e0e0;
+      color: #ccc;
       padding: 18px 25px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #333;
       border-radius: 12px;
-      font-size: 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
       letter-spacing: 2px;
       transition: all 0.3s ease;
+      border: 1px solid #3a3a3a;
       position: relative;
       overflow: hidden;
     }
@@ -175,7 +180,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
       transition: left 0.5s ease;
     }
 
@@ -184,36 +189,51 @@
     }
 
     .link-item a:hover {
-      background: rgba(212, 175, 55, 0.15);
-      border-color: rgba(212, 175, 55, 0.5);
+      background: #3a3a3a;
       color: #d4af37;
       transform: translateX(8px);
+      border-color: #d4af37;
     }
 
-    .link-icon {
+    .link-content {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .link-icon-left {
+      font-size: 1.4rem;
+      min-width: 30px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .link-item a:hover .link-icon-left {
+      transform: scale(1.2);
+    }
+
+    .link-icon-right {
       font-size: 1.2rem;
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
-    .link-item a:hover .link-icon {
-      opacity: 1;
+    .link-item a:hover .link-icon-right {
+      transform: translateX(5px);
     }
 
     footer {
       text-align: center;
-      margin-top: 100px;
-      padding: 40px 0;
-      border-top: 1px solid rgba(212, 175, 55, 0.2);
-      color: #888;
+      margin-top: 80px;
+      padding: 30px 0;
+      color: #666;
       font-size: 0.9rem;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
 
     @media (max-width: 768px) {
       h1 {
         font-size: 2.5rem;
-        letter-spacing: 6px;
+        letter-spacing: 2px;
       }
 
       .members-grid {
@@ -225,8 +245,13 @@
         padding: 35px 25px;
       }
 
-      .container {
-        padding: 40px 20px;
+      .avatar-wrapper {
+        width: 110px;
+        height: 110px;
+      }
+
+      .avatar-icon {
+        font-size: 2.8rem;
       }
     }
   </style>
@@ -234,38 +259,58 @@
 <body>
   <div class="container">
     <header>
-      <h1>GROUP 6 </h1>
+      <h1>NHÓM 6</h1>
       <div class="divider"></div>
-      <p class="subtitle">NHÓM 6 THÀNH VIÊN</p>
+      <p class="subtitle">PORTFOLIO THÀNH VIÊN</p>
     </header>
 
     <div class="members-grid">
       <!-- Member 1 -->
       <div class="member-card">
-        <h3 class="member-name">Cao Ngọc Huỳnh</h2>
+        <div class="member-header">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring">
+              <i class="fas fa-user avatar-icon"></i>
+            </div>
+          </div>
+          <h3 class="member-name">Cao Ngọc Huỳnh</h3>
+          <p class="member-id">MSSV: 224270</p>
+        </div>
         <ul class="links-list">
           <li class="link-item">
             <a href="https://drive.google.com/file/d/11107HyfVwYI_j8akFBVwSaUtJ0Sd6iZ3/view?usp=drive_link" target="_blank">
-              <span>ĐƠN XIN VIỆC</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-file-alt link-icon-left"></i>
+                <span>ĐƠN XIN VIỆC</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
-            <a href="https://drive.google.com/file/d/1KYpqudfye1BiCISqpK3J1VhTtLfloGCc/view?usp=drive_link" target="_blank">
-              <span>CV</span>
-              <span class="link-icon">→</span>
+            <a href="https://drive.google.com/file/d/1kRM_7GunJ0KcG_ZJcmjNr_CZ2aBzAaoy/view?usp=drive_link" target="_blank">
+              <div class="link-content">
+                <i class="fas fa-id-card link-icon-left"></i>
+                <span>CV</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScOraSoXZzYAftWuRPpQiTEUBSKyTmlQMG7XI-MWxoM6LcbUg/viewform" target="_blank">
-              <span>GOOGLE FORMS</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fab fa-google link-icon-left"></i>
+                <span>GOOGLE FORMS</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://www.facebook.com/share/1Big3rabDM/" target="_blank">
-              <span>WEB CÁ NHÂN</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-globe link-icon-left"></i>
+                <span>WEB CÁ NHÂN</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
         </ul>
@@ -273,30 +318,50 @@
 
       <!-- Member 2 -->
       <div class="member-card">
-        <h3 class="member-name">Võ Trung Hậu</h2>
+        <div class="member-header">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring">
+              <i class="fas fa-user avatar-icon"></i>
+            </div>
+          </div>
+          <h3 class="member-name">Võ Trung Hậu</h3>
+          <p class="member-id">MSSV: 225635</p>
+        </div>
         <ul class="links-list">
           <li class="link-item">
             <a href="https://drive.google.com/file/d/1KJfWLxhYaSfkRXifuLBbt2FClbBgaK7k/view?usp=drive_link" target="_blank">
-              <span>ĐƠN XIN VIỆC</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-file-alt link-icon-left"></i>
+                <span>ĐƠN XIN VIỆC</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
-            <a href="https://drive.google.com/file/d/1TZZ3v9PlS5CwTSY3DMUAG4V49a-4bqyF/view?usp=drive_link" target="_blank">
-              <span>CV</span>
-              <span class="link-icon">→</span>
+            <a href="https://drive.google.com/file/d/1moqa-w5dYdID5t74cawZaPIv77FRQ4f3/view?usp=drive_link" target="_blank">
+              <div class="link-content">
+                <i class="fas fa-id-card link-icon-left"></i>
+                <span>CV</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
-            <a href="https://forms.gle/hLbY1uVSSfsbCaibA" target="_blank">
-              <span>GOOGLE FORMS</span>
-              <span class="link-icon">→</span>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScOraSoXZzYAftWuRPpQiTEUBSKyTmlQMG7XI-MWxoM6LcbUg/viewform" target="_blank">
+              <div class="link-content">
+                <i class="fab fa-google link-icon-left"></i>
+                <span>GOOGLE FORMS</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://www.facebook.com/akiravo4856/" target="_blank">
-              <span>WEB CÁ NHÂN</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-globe link-icon-left"></i>
+                <span>WEB CÁ NHÂN</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
         </ul>
@@ -304,30 +369,50 @@
 
       <!-- Member 3 -->
       <div class="member-card">
-        <h3 class="member-name">Hồ Như Ý</h2>
+        <div class="member-header">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring">
+              <i class="fas fa-user avatar-icon"></i>
+            </div>
+          </div>
+          <h3 class="member-name">Hồ Như Ý</h3>
+          <p class="member-id">MSSV: 221012</p>
+        </div>
         <ul class="links-list">
           <li class="link-item">
             <a href="https://drive.google.com/file/d/1FmoaV0CO-UN1I3LMmZuzVqYSeIuoomzl/view?usp=drive_link" target="_blank">
-              <span>ĐƠN XIN VIỆC</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-file-alt link-icon-left"></i>
+                <span>ĐƠN XIN VIỆC</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://drive.google.com/file/d/1gBiv4q7kI-rAFYn4VzDROfxghIqyqsWX/view?usp=drive_link" target="_blank">
-              <span>CV</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-id-card link-icon-left"></i>
+                <span>CV</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScOraSoXZzYAftWuRPpQiTEUBSKyTmlQMG7XI-MWxoM6LcbUg/viewform" target="_blank">
-              <span>GOOGLE FORMS</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fab fa-google link-icon-left"></i>
+                <span>GOOGLE FORMS</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://www.instagram.com/nhhu_yyy/" target="_blank">
-              <span>WEB CÁ NHÂN</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-globe link-icon-left"></i>
+                <span>WEB CÁ NHÂN</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
         </ul>
@@ -335,30 +420,50 @@
 
       <!-- Member 4 -->
       <div class="member-card">
-        <h3 class="member-name">Nguyễn Thị Thúy Ngân</h2>
+        <div class="member-header">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring">
+              <i class="fas fa-user avatar-icon"></i>
+            </div>
+          </div>
+          <h3 class="member-name">Nguyễn Thị Thúy Ngân</h3>
+          <p class="member-id">MSSV: 221008</p>
+        </div>
         <ul class="links-list">
           <li class="link-item">
             <a href="https://drive.google.com/file/d/1u58ZVnr-_883jRBx6fCCKJMNLAtFvL1P/view?usp=drive_link" target="_blank">
-              <span>ĐƠN XIN VIỆC</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-file-alt link-icon-left"></i>
+                <span>ĐƠN XIN VIỆC</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
-            <a href="https://drive.google.com/file/d/1ZxvAPdP3cmwnvq7YxYKttcaxtd1KK7OV/view?usp=drive_link" target="_blank">
-              <span>CV</span>
-              <span class="link-icon">→</span>
+            <a href="https://drive.google.com/file/d/1W0gUTYYs6rGWPrT0tfOJ5dIjyz8KPD4r/view?usp=drive_link" target="_blank">
+              <div class="link-content">
+                <i class="fas fa-id-card link-icon-left"></i>
+                <span>CV</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScOraSoXZzYAftWuRPpQiTEUBSKyTmlQMG7XI-MWxoM6LcbUg/viewform" target="_blank">
-              <span>GOOGLE FORMS</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fab fa-google link-icon-left"></i>
+                <span>GOOGLE FORMS</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://www.instagram.com/_tthy.nqna/" target="_blank">
-              <span>WEB CÁ NHÂN</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-globe link-icon-left"></i>
+                <span>WEB CÁ NHÂN</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
         </ul>
@@ -366,30 +471,50 @@
 
       <!-- Member 5 -->
       <div class="member-card">
-        <h3 class="member-name">Phan Thị Mỹ Huyền</h2>
+        <div class="member-header">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring">
+              <i class="fas fa-user avatar-icon"></i>
+            </div>
+          </div>
+          <h3 class="member-name">Phan Thị Mỹ Huyền</h3>
+          <p class="member-id">MSSV: 224597</p>
+        </div>
         <ul class="links-list">
           <li class="link-item">
             <a href="https://drive.google.com/file/d/1oechhNRlHKGtttw0-orMMDZ18iH_gyg9/view?usp=drive_link" target="_blank">
-              <span>ĐƠN XIN VIỆC</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-file-alt link-icon-left"></i>
+                <span>ĐƠN XIN VIỆC</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
-            <a href="https://drive.google.com/file/d/11HQ3uvlb0ShxdJcnJKu9lCI2scI8-9KV/view?usp=drive_link" target="_blank">
-              <span>CV</span>
-              <span class="link-icon">→</span>
+            <a href="https://drive.google.com/file/d/12JSV56-59bqK36xjVeKNJRhTwLDMUtoR/view?usp=drive_link" target="_blank">
+              <div class="link-content">
+                <i class="fas fa-id-card link-icon-left"></i>
+                <span>CV</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScOraSoXZzYAftWuRPpQiTEUBSKyTmlQMG7XI-MWxoM6LcbUg/viewform" target="_blank">
-              <span>GOOGLE FORMS</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fab fa-google link-icon-left"></i>
+                <span>GOOGLE FORMS</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://www.facebook.com/share/1WghZrBGp2/" target="_blank">
-              <span>WEB CÁ NHÂN</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-globe link-icon-left"></i>
+                <span>WEB CÁ NHÂN</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
         </ul>
@@ -397,29 +522,59 @@
 
       <!-- Member 6 -->
       <div class="member-card">
-        <h4 class="member-name">Huỳnh Thị Phương Ngân</h4>
+        <div class="member-header">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring">
+              <i class="fas fa-user avatar-icon"></i>
+            </div>
+          </div>
+          <h3 class="member-name">Huỳnh Thị Phương Ngân</h3>
+          <p class="member-id">MSSV: 223094</p>
+        </div>
         <ul class="links-list">
           <li class="link-item">
             <a href="https://drive.google.com/file/d/1F6rpSKw_w9DEj3id5yqN4GOxUftUQYjp/view?usp=drive_link" target="_blank">
-              <span>ĐƠN XIN VIỆC</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-file-alt link-icon-left"></i>
+                <span>ĐƠN XIN VIỆC</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
-            <a href="https://drive.google.com/file/d/1cfOH4Ml09B7DQcbmcneL-an3dGYDGNzv/view?usp=drive_link" target="_blank">
-              <span>CV</span>
-              <span class="link-icon">→</span>
+            <a href="https://drive.google.com/file/d/1L4djzTxGiOh6nsE21mtI0aQyxBQgHAmV/view?usp=drive_link" target="_blank">
+              <div class="link-content">
+                <i class="fas fa-id-card link-icon-left"></i>
+                <span>CV</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScOraSoXZzYAftWuRPpQiTEUBSKyTmlQMG7XI-MWxoM6LcbUg/viewform" target="_blank">
-              <span>GOOGLE FORMS</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fab fa-google link-icon-left"></i>
+                <span>GOOGLE FORMS</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
           <li class="link-item">
             <a href="https://www.facebook.com/share/1FGvPShN1k/" target="_blank">
-              <span>WEB CÁ NHÂN</span>
-              <span class="link-icon">→</span>
+              <div class="link-content">
+                <i class="fas fa-globe link-icon-left"></i>
+                <span>WEB CÁ NHÂN</span>
+              </div>
+              <i class="fas fa-arrow-right link-icon-right"></i>
             </a>
           </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Nhóm 6 - Portfolio</p>
+    </footer>
+  </div>
+</body>
+</html>
